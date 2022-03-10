@@ -27,3 +27,27 @@ function properCase(str) {
 
 	return properCase;
 }
+
+// this is a much more generic function for properCase
+function properCase2(str) {
+	// this is for the very first character
+	var properCase = str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase();
+
+	// this is the array containing all the characters after wich the rightmost side character is going to be Uppercased
+	var chars = [" ", "-"];
+
+	for (var i in chars) {
+		var charStartPos = 0;
+		while (properCase.indexOf(chars[i], charStartPos) != -1) {
+			var indexOfChar = properCase.indexOf(chars[i], charStartPos);
+
+			properCase = properCase.substring(0, indexOfChar + 1) +
+				properCase.substring(indexOfChar + 1, indexOfChar + 2).toUpperCase() +
+				properCase.substring(indexOfChar + 2, properCase.length);
+			charStartPos = indexOfChar + 1;
+		}
+
+	}
+
+	return properCase;
+}
