@@ -8,6 +8,8 @@
 
 Is a very simple JavaScript method for managing Proper Cases for person names and city names when the name contains spaces and dashes.
 
+The second function (``properCase2``) is more "generic": it uses an array of characters
+
 Here are some examples:
 
 ```javascript
